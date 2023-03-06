@@ -1,0 +1,102 @@
+body {
+  background: #808080;
+}
+.pulsing-play-button {
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+  border: none;
+}
+.pulsing-play-button:hover .pulsing-play-button__icon {
+  transform: scale(0.7);
+}
+.pulsing-play-button__overlay {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.pulsing-play-button__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+  width: 160px;
+  background: rgba(238,238,238,0.2);
+  box-shadow: 0 0 0 20px rgba(238,238,238,0.2);
+  border-radius: 100%;
+  transform: scale(0.5);
+  transition: transform 0.5s;
+  animation: pulsing-animation 5s ease infinite;
+}
+.pulsing-play-button__icon::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  margin: auto;
+  box-shadow: 0 0 0 20px rgba(238,238,238,0.2);
+  background: rgba(238,238,238,0.9);
+  border-radius: 100%;
+  animation: pulsing-animation 5s ease infinite;
+  animation-delay: -2s;
+}
+.pulsing-play-button__icon::after {
+  content: '';
+  display: block;
+  position: relative;
+  width: 0;
+  height: 0;
+  margin-left: 4px;
+  border-style: solid;
+  border-width: 15px 0 15px 26px;
+  border-color: transparent transparent transparent #2c2b2a;
+}
+@-moz-keyframes pulsing-animation {
+  0% {
+    box-shadow: 0 0 0 15px rgba(238,238,238,0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 25px rgba(238,238,238,0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(238,238,238,0.2);
+  }
+}
+@-webkit-keyframes pulsing-animation {
+  0% {
+    box-shadow: 0 0 0 15px rgba(238,238,238,0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 25px rgba(238,238,238,0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(238,238,238,0.2);
+  }
+}
+@-o-keyframes pulsing-animation {
+  0% {
+    box-shadow: 0 0 0 15px rgba(238,238,238,0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 25px rgba(238,238,238,0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(238,238,238,0.2);
+  }
+}
+@keyframes pulsing-animation {
+  0% {
+    box-shadow: 0 0 0 15px rgba(238,238,238,0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 25px rgba(238,238,238,0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(238,238,238,0.2);
+  }
+}
